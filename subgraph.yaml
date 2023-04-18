@@ -1,0 +1,42 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: WOOP
+    network: base-testnet
+    source:
+      address: "0xC26122f8Fe9fB88998791ce5bEE6d8e54BEE7536"
+      abi: WOOP
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - DelegateChanged
+        - DelegateVotesChanged
+        - Freezed
+        - OwnershipTransferred
+        - Transfer
+        - UnFreezed
+      abis:
+        - name: WOOP
+          file: ./abis/WOOP.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: DelegateChanged(indexed address,indexed address,indexed address)
+          handler: handleDelegateChanged
+        - event: DelegateVotesChanged(indexed address,uint256,uint256)
+          handler: handleDelegateVotesChanged
+        - event: Freezed()
+          handler: handleFreezed
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: UnFreezed()
+          handler: handleUnFreezed
+      file: ./src/woop.ts

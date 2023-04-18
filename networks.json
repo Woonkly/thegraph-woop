@@ -1,0 +1,8 @@
+{
+  "base-testnet": {
+    "WOOP": {
+      "address": "0xC26122f8Fe9fB88998791ce5bEE6d8e54BEE7536",
+      "startBlock": 0
+    }
+  }
+}
