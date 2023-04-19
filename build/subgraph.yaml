@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: WOOP
@@ -23,7 +23,7 @@ dataSources:
         - UnFreezed
       abis:
         - name: WOOP
-          file: ./abis/WOOP.json
+          file: WOOP/abis/WOOP.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleApproval
@@ -39,4 +39,4 @@ dataSources:
           handler: handleTransfer
         - event: UnFreezed()
           handler: handleUnFreezed
-      file: ./src/woop.ts
+      file: WOOP/WOOP.wasm
