@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: WOOP
-    network: chapel
+    network: mainnet
     source:
-      address: "0xC26122f8Fe9fB88998791ce5bEE6d8e54BEE7536"
+      address: "0x8b303d5BbfBbf46F1a4d9741E491e06986894e18"
       abi: WOOP
-      startBlock: 0
+      startBlock: 21118331
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
